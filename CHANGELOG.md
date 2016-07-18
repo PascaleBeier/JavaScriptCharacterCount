@@ -1,3 +1,9 @@
+## 1.1.1
+
+### Bugs
+
+* Fixed typo on listener.
+
 ## 1.1.0
 
 ### Features

@@ -3,10 +3,14 @@ class CharacterCount {
         const input = document.querySelector(options.input.el)
         const output = document.querySelector(options.output.el)
         
-        options.output.countdown === true ? output.value = options.output.start - input.value.length : output.value = input.value.length
+        function count () {
+            options.output.countdown === true ? output.value = options.output.start - input.value.length : output.value = input.value.length
+        }
+
+        count()
 
         input.addEventListener('input', function () {
-            self.output.countdown === true ? output.value = options.output.start - input.value.length : output.value = input.value.length
+            count()
         })
     }
 }
