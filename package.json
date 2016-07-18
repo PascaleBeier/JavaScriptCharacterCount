@@ -1,0 +1,30 @@
+{
+  "name": "javascript-character-count",
+  "version": "1.0.0",
+  "description": "An amazingly small, dependency-less utility for text truncation. Only 1.18 KByte!",
+  "main": "dist/javascript-character-count.min.js",
+  "scripts": {
+    "dev": "webpack -w",
+    "build": "webpack --optimize-minimize"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PascaleBeier/JavaScriptCharacterCount.git"
+  },
+  "keywords": ["count", "countdown", "text"],
+  "author": "Pascale Beier <mail@pascalebeier.de>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PascaleBeier/JavaScriptCharacterCount/issues"
+  },
+  "homepage": "https://github.com/PascaleBeier/JavaScriptCharacterCount#readme",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "eslint": "^3.1.0",
+    "eslint-friendly-formatter": "^2.0.6",
+    "eslint-loader": "^1.4.1",
+    "webpack": "^1.13.1"
+  }
+}
