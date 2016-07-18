@@ -1,3 +1,9 @@
+## 1.1.2
+
+### Bugs
+
+* Do not try attaching Event Listeners to non-existant elements.
+
 ## 1.1.1
 
 ### Bugs
@@ -10,14 +16,6 @@
 
 * Count prefilled input values.
 * reduced size to 671 bytes.
-
-### Bugs
-
-* none
-
-### Breaking
-
-* none
 
 ### Bugs
 
