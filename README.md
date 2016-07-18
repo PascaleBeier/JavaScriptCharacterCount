@@ -1,6 +1,6 @@
 ## JavaScriptCharacterCount
 
-> An amazingly small, dependency-less utility for text truncation. Only 1.16 KByte!
+> An amazingly small, dependency-less utility counting characters. Only 1.18 KByte!
 
 [![Demo](demo.gif)](#)
 
