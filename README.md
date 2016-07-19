@@ -1,6 +1,6 @@
 ## JavaScriptCharacterCount
 
-> An amazingly small, dependency-less utility for text truncation. Less than 1 Kbyte!
+> An amazingly small, dependency-less utility for counting input characters. Less than 1 Kbyte!
 
 [![Demo](demo.gif)](#)
 
@@ -9,8 +9,6 @@
 ```bash
 # Get it with npm ...
 $ npm i javascript-character-count
-# Or clone it from GitHub
-$ git clone https://github.com/PascaleBeier/JavaScriptCharacterCount
 ```
 
 ### Usage
@@ -91,10 +89,27 @@ new CharacterCount({
 })
 ```
 
-### CHANGELOG
+### Changelog
 
 See [CHANGELOG](CHANGELOG.md)
 
-### LICENSE
+### Contributing - Development Setup
+
+```bash
+# Get the source
+$ git clone https://github.com/PascaleBeier/JavaScriptCharacterCount
+$ cd JavaScriptCharacterCount
+# Install devDependencies
+$ npm i
+# Compile src/ to dist/
+$ npm run dev
+# Build for publishing
+$ npm run build
+```
+
+start editing src/javascript-character-count.js and open up examples/index.html in your browser.
+
+
+### License
 
 The MIT License.
