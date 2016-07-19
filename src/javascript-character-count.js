@@ -1,16 +1,20 @@
 class CharacterCount {
     constructor(options) {
-        const input = document.querySelector(options.input.el) || null 
-        const output = document.querySelector(options.output.el) || null
+        this.options = options
+        this.input = document.querySelector(options.input.el) || null 
+        this.output = document.querySelector(options.output.el) || null
         
-        function count () {
-            input !== null && output !== null ?
-                options.output.countdown === true ? 
-                    output.value = options.output.start - input.value.length : 
-                    output.value = input.value.length : false
+        if (typeof(this.input) != 'undefined' && this.input != null && typeof(this.output) != 'undefined' && this.output != null) {
+            
+            this.count()
+            this.input.addEventListener('input', () => this.count())
         }
+    }
 
-        count() ? input.addEventListener('input', () => count()) : null
+    count () {
+        this.options.output.countdown === true ? 
+            this.output.value = this.options.output.start - this.input.value.length : 
+            this.output.value = this.input.value.length
     }
 }
 

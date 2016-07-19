@@ -1,3 +1,7 @@
+## 1.1.3
+
+* Add Typechecking, fix logic error.
+
 ## 1.1.2
 
 ### Bugs
