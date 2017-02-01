@@ -1,42 +1,71 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JavaScript Character Count</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
-          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Character Count</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
 </head>
 <body style="height: 100vh; display: flex; align-items: center; align-content: center;">
-  <div class="container">
+<div class="container">
+
+  <div class="col-md-6">
+    <h1 class="display-3">Count Up</h1>
     <form>
       <div class="form-group row">
-        <label for="input" class="col-2 col-form-label">Input</label>
+        <label for="countupInput" class="col-2 col-form-label">Input</label>
         <div class="col-10">
-          <input class="form-control" type="text" value="Artisanal kale" id="input">
+          <input class="form-control" type="text" value="" id="countupInput">
         </div>
       </div>
       <div class="form-group row">
-        <label for="output" class="col-2 col-form-label">Output</label>
+        <label for="countupOutput" class="col-2 col-form-label">Output</label>
         <div class="col-10">
-          <input class="form-control disabled" type="text" id="output" disabled>
+          <input class="form-control disabled" type="text" id="countupOutput" disabled> entered <span style="color:red; " class="countupCallback"></span>
         </div>
       </div>
     </form>
   </div>
 
+  <div class="col-md-6">
+    <h1 class="display-3">Count Down</h1>
+    <form>
+      <div class="form-group row">
+        <label for="countdownInput" class="col-2 col-form-label">Input</label>
+        <div class="col-10">
+          <input class="form-control" type="text" value="" id="countdownInput">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="countdownOutput" class="col-2 col-form-label">Output</label>
+        <div class="col-10">
+          <input class="form-control disabled" type="text" id="countdownOutput" disabled> remaining <span style="color: red;" class="countdownCallback"></span>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+
 <script src="../dist/javascript-character-count.min.js"></script>
 <script>
-  characterCount.count(document.getElementById('input'), {
-    to: 500,
-    output: document.getElementById('output')
+  characterCount(document.getElementById('countupInput'), {
+    max: 3,
+    output: document.getElementById('countupOutput')
   }, function () {
-    alert('you entered the maximum characters')
-  })
+    document.querySelector('.countupCallback').textContent = 'Callback: Max Characters entered!'
+  });
+
+    characterCount(document.getElementById('countdownInput'), {
+    max: 3,
+    output: document.getElementById('countdownOutput')
+  }, function () {
+    document.querySelector('.countdownCallback').textContent = 'Callback: Max Characters entered!'
+  }, true);
 </script>
 </body>
+
 </html>
-
-

@@ -30,14 +30,14 @@ $ npm i javascript-character-count
 </form>
 
 <script>
-    new CharacterCount({
-        input: {
-            el: '#count-characters'
-        },
-        output: {
-            el: '#count-characters-result'
-        }
-    })
+  // Pass input element as first argument.
+  // with jquery: $('#count-characters');
+  // Options array as second argument.
+  characterCount(document.getElementById('count-characters'), {
+    max: 3, // the maximum input length (use for ux or callback)
+    // Pass output element to the output key.
+    output: document.getElementById('count-characters-result')
+  });
 </script>
 ```
 
@@ -46,48 +46,87 @@ $ npm i javascript-character-count
 ```html
 <form>
     <fieldset>
-        <label for="countdown-characters">Enter Text ...</label>
-        <input id="countdown-characters">
+        <label for="count-characters">Enter Text ...</label>
+        <input id="count-characters">
     </fieldset>
 
     <fieldset>
-        <label for="countdown-characters-result">Element can contain up to
-        <input type="text" id="countdown-characters-result" readonly>
+        <label for="count-characters-result">Element can contain up to
+        <input type="text" id="count-characters-result" readonly>
+        more characters.
+    </fieldset>
+</form>
+
+<script>
+  // Pass input element as first argument.
+  // with jquery: $('#count-characters');
+  // Options array as second argument.
+  characterCount(document.getElementById('count-characters'), {
+    max: 3, // the maximum input length (use for ux or callback)
+    // Pass output element to the output key.
+    output: document.getElementById('count-characters-result')
+  },
+  null // Callback in the third argument - here null
+  true // Invert counting? E.g counting down?
+  );
+</script>
+```
+```
+
+> See 'examples' for a real life example.
+
+### API
+
+```javascript
+  characterCount(element <element>, array <options>, callback <function> = null, boolean <invert> = false);
+```
+
+### Options
+
+The array passed as second argument:
+
+```javascript
+{
+  max: 255 // int, required. The callback is fired after this number is reached (or subtracted to 0 with invert = true)
+  output: document.querySelector('div.outputElement'), // element, required
+}
+```
+
+### Callbacks
+
+Most of the time, you will want something to happen when a user enters a certain number of characters.
+You can realize this with callbacks. If you want a simple `alert()` to popup, you can do:
+
+```html
+<form>
+    <fieldset>
+        <label for="count-characters">Enter Text ...</label>
+        <input id="count-characters">
+    </fieldset>
+
+    <fieldset>
+        <label for="count-characters-result">Element contains
+        <input type="text" id="count-characters-result" readonly>
         characters.
     </fieldset>
 </form>
 
 <script>
-    new CharacterCount({
-        input: {
-            el: '#countdown-characters'
-        },
-        output: {
-            el: '#countdown-characters-result',
-            countdown: true,
-            start: 500
-        }
-    });
+  // Pass input element as first argument.
+  // with jquery: $('#count-characters');
+  // Options array as second argument.
+  characterCount(document.getElementById('count-characters'), {
+    max: 3, // the maximum input length (use for ux or callback)
+    // Pass output element to the output key.
+    output: document.getElementById('count-characters-result')
+  },
+  // Passing the callback function as third parameter.
+  function () {
+    alert('You entered the maximum number of characters');
+  });
 </script>
 ```
 
-> See 'examples' for further reference.
-
-### Options
-
-```javascript
-
-new CharacterCount({
-    input: {
-        el: '#countdown-characters' // Element you are listening on for user input
-    },
-    output: {
-        el: '#countdown-characters-result', // Element you output the result
-        countdown: true, // When you want to use the countdown variant, defaults to null
-        start: 500 // Counts down from this given number and decreases with user input
-    }
-})
-```
 
 ### Changelog
 

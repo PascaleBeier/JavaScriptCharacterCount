@@ -2,7 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/javascript-character-count',
+  context: path.resolve(__dirname, 'src'),
+  entry: './javascript-character-count',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'javascript-character-count.min.js',
