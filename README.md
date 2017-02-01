@@ -71,9 +71,17 @@ $ npm i javascript-character-count
   );
 </script>
 ```
-```
-
 > See 'examples' for a real life example.
+
+### CDN
+
+For Development: [https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
+
+For Production: [https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
+
+### Download
+
+Downloads can be found [at the Releases Page](https://github.com/PascaleBeier/JavaScriptCharacterCount/releases).
 
 ### API
 
