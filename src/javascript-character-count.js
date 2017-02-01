@@ -1,4 +1,4 @@
-export function count(el, options, callback = null) {
+export function (el, options, callback = null) {
   let value = el.value.length;
   el.addEventListener('input', () => {
     value = el.value.length;
