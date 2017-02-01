@@ -1,27 +1,24 @@
+const path = require('path');
+const webpack = require('webpack');
+
 module.exports = {
-    entry: './src/javascript-character-count',
-    output: {
-        filename: 'dist/javascript-character-count.min.js'
-    },
-
-    module: {
-        preLoaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'eslint'
-            }
-        ],
-        loaders: [
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                loader: 'babel'
-            }
-
-        ]
-    },
-    eslint: {
-        formatter: require('eslint-friendly-formatter')
-    }
-}
+  entry: './src/javascript-character-count',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'javascript-character-count.min.js',
+    library: 'characterCount',
+    libraryTarget: 'umd'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: /src/,
+        loader: 'babel-loader'
+      }
+    ]
+  },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
+};
