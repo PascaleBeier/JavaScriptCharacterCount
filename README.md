@@ -4,13 +4,6 @@
 
 [![Demo](demo.gif)](#)
 
-### Download
-
-```bash
-# Get it with npm ...
-$ npm i javascript-character-count
-```
-
 ### Usage
 
 #### Count Up
@@ -73,23 +66,25 @@ $ npm i javascript-character-count
 ```
 > See 'examples' for a real life example.
 
-### CDN
+#### CDN
 
 For Development: [https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
 
 For Production: [https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
 
-### Download
+#### Download
 
 Downloads can be found [at the Releases Page](https://github.com/PascaleBeier/JavaScriptCharacterCount/releases).
 
-### API
+npm: `npm i javascript-character-count`
+
+#### API
 
 ```javascript
   characterCount(element <element>, array <options>, callback <function> = null, boolean <invert> = false);
 ```
 
-### Options
+#### Options
 
 The array passed as second argument:
 
@@ -100,7 +95,7 @@ The array passed as second argument:
 }
 ```
 
-### Callbacks
+#### Callbacks
 
 Most of the time, you will want something to happen when a user enters a certain number of characters.
 You can realize this with callbacks. If you want a simple `alert()` to popup, you can do:
@@ -136,7 +131,7 @@ You can realize this with callbacks. If you want a simple `alert()` to popup, yo
 ```
 
 
-### Changelog
+#### Changelog
 
 See [CHANGELOG](CHANGELOG.md)
 
@@ -157,6 +152,6 @@ $ npm run build
 start editing src/javascript-character-count.js and open up examples/index.html in your browser.
 
 
-### License
+#### License
 
 The MIT License.
