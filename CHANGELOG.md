@@ -1,3 +1,9 @@
+## 2.0.0
+
+* Completely Rewritten
+* Added Callbacks
+* Updated DevDependencies
+
 ## 1.1.3
 
 * Add Typechecking, fix logic error.

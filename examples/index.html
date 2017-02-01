@@ -1,63 +1,71 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>javascript-character-count</title>
-    </head>
-    <body>
 
-        <h1>Count Characters</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JavaScript Character Count</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
+    crossorigin="anonymous">
+</head>
+<body style="height: 100vh; display: flex; align-items: center; align-content: center;">
+<div class="container">
 
-        <form>
-            <fieldset>
-                <label for="count-characters">Enter Text ...</label>
-                <input id="count-characters" value="asdf">
-            </fieldset>
+  <div class="col-md-6">
+    <h1 class="display-3">Count Up</h1>
+    <form>
+      <div class="form-group row">
+        <label for="countupInput" class="col-2 col-form-label">Input</label>
+        <div class="col-10">
+          <input class="form-control" type="text" value="" id="countupInput">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="countupOutput" class="col-2 col-form-label">Output</label>
+        <div class="col-10">
+          <input class="form-control disabled" type="text" id="countupOutput" disabled> entered <span style="color:red; " class="countupCallback"></span>
+        </div>
+      </div>
+    </form>
+  </div>
 
-            <fieldset>
-                <label for="count-characters-result">Element contains
-                <input type="text" id="count-characters-result" readonly>
-                characters.
-            </fieldset>
-        </form>
+  <div class="col-md-6">
+    <h1 class="display-3">Count Down</h1>
+    <form>
+      <div class="form-group row">
+        <label for="countdownInput" class="col-2 col-form-label">Input</label>
+        <div class="col-10">
+          <input class="form-control" type="text" value="" id="countdownInput">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="countdownOutput" class="col-2 col-form-label">Output</label>
+        <div class="col-10">
+          <input class="form-control disabled" type="text" id="countdownOutput" disabled> remaining <span style="color: red;" class="countdownCallback"></span>
+        </div>
+      </div>
+    </form>
+  </div>
 
-        <h1>Countdown</h1>
+</div>
 
-        <form>
-            <fieldset>
-                <label for="countdown-characters">Enter Text ...</label>
-                <input id="countdown-characters" value="asdf">
-            </fieldset>
+<script src="../dist/javascript-character-count.min.js"></script>
+<script>
+  characterCount(document.getElementById('countupInput'), {
+    max: 3,
+    output: document.getElementById('countupOutput')
+  }, function () {
+    document.querySelector('.countupCallback').textContent = 'Callback: Max Characters entered!'
+  });
 
-            <fieldset>
-                <label for="countdown-characters-result">Element can contain up to
-                <input type="text" id="countdown-characters-result" readonly>
-                characters.
-            </fieldset>
-        </form>
+    characterCount(document.getElementById('countdownInput'), {
+    max: 3,
+    output: document.getElementById('countdownOutput')
+  }, function () {
+    document.querySelector('.countdownCallback').textContent = 'Callback: Max Characters entered!'
+  }, true);
+</script>
+</body>
 
-        <script src="../dist/javascript-character-count.min.js"></script>
-        <script>
-            // Count
-            new CharacterCount({
-                input: {
-                    el: '#count-characters'
-                },
-                output: {
-                    el: '#count-characters-result'
-                }
-            })
-            // Countdown
-            new CharacterCount({
-                input: {
-                    el: '#countdown-characters'
-                },
-                output: {
-                    el: '#countdown-characters-result',
-                    countdown: true,
-                    start: 500
-                }
-            });
-        </script>
-    </body>
 </html>
