@@ -1,3 +1,7 @@
+## 2.0.1
+
+* Update devDependencies and Build System
+
 ## 2.0.0
 
 * Completely Rewritten
