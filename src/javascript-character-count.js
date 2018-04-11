@@ -1,18 +1,18 @@
-module.exports = function (el, options, callback = null, invert = false) {
+module.exports = function (el, options, callback = null) {
 
   function sync() {
-    return options.output.value = false === invert ?  el.value.length : options.max - el.value.length;
+    return options.output.value = options.invert === true ?  options.max - el.value.length : el.value.length;
   }
 
   sync();
 
   el.addEventListener('input', () => {
-    if (false === invert) {
-      if (sync() > options.max && null !== callback) {
+    if (options.invert === true) {
+      if (sync() < 0 && callback !== null) {
         callback();
       }
     } else {
-      if (sync() < 0 && null !== callback) {
+      if (sync() > options.max && callback !== null) {
         callback();
       }
     }

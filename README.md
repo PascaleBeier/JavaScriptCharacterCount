@@ -57,10 +57,11 @@
   characterCount(document.getElementById('count-characters'), {
     max: 3, // the maximum input length (use for ux or callback)
     // Pass output element to the output key.
-    output: document.getElementById('count-characters-result')
+    output: document.getElementById('count-characters-result'),
+    // Invert counting, e.g. counting down
+    invert: true
   },
   null // Callback in the third argument - here null
-  true // Invert counting? E.g counting down?
   );
 </script>
 ```
@@ -68,9 +69,9 @@
 
 #### CDN
 
-For Development: [https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
+For Development: [https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.1.0/dist/javascript-character-count.min.js](https://rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.1.0/dist/javascript-character-count.min.js)
 
-For Production: [https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js](https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.0.0/dist/javascript-character-count.min.js)
+For Production: [https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.1.0/dist/javascript-character-count.min.js](https://cdn.rawgit.com/PascaleBeier/JavaScriptCharacterCount/2.1.0/dist/javascript-character-count.min.js)
 
 #### Download
 
@@ -81,7 +82,7 @@ npm: `npm i javascript-character-count`
 #### API
 
 ```javascript
-  characterCount(element <element>, array <options>, callback <function> = null, boolean <invert> = false);
+  characterCount(element <element>, array <options>, callback <function> = null);
 ```
 
 #### Options
@@ -92,6 +93,7 @@ The array passed as second argument:
 {
   max: 255 // int, required. The callback is fired after this number is reached (or subtracted to 0 with invert = true)
   output: document.querySelector('div.outputElement'), // element, required
+  invert: true // invert counting
 }
 ```
 

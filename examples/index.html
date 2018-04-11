@@ -9,63 +9,67 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ"
     crossorigin="anonymous">
 </head>
+
 <body style="height: 100vh; display: flex; align-items: center; align-content: center;">
-<div class="container">
+  <div class="container">
 
-  <div class="col-md-6">
-    <h1 class="display-3">Count Up</h1>
-    <form>
-      <div class="form-group row">
-        <label for="countupInput" class="col-2 col-form-label">Input</label>
-        <div class="col-10">
-          <input class="form-control" type="text" value="" id="countupInput">
+    <div class="col-md-6">
+      <h1 class="display-3">Count Up</h1>
+      <form>
+        <div class="form-group row">
+          <label for="countupInput" class="col-2 col-form-label">Input</label>
+          <div class="col-10">
+            <input class="form-control" type="text" value="" id="countupInput">
+          </div>
         </div>
-      </div>
-      <div class="form-group row">
-        <label for="countupOutput" class="col-2 col-form-label">Output</label>
-        <div class="col-10">
-          <input class="form-control disabled" type="text" id="countupOutput" disabled> entered <span style="color:red; " class="countupCallback"></span>
+        <div class="form-group row">
+          <label for="countupOutput" class="col-2 col-form-label">Output</label>
+          <div class="col-10">
+            <input class="form-control disabled" type="text" id="countupOutput" disabled> entered
+            <span style="color:red; " class="countupCallback"></span>
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
+
+    <div class="col-md-6">
+      <h1 class="display-3">Count Down</h1>
+      <form>
+        <div class="form-group row">
+          <label for="countdownInput" class="col-2 col-form-label">Input</label>
+          <div class="col-10">
+            <input class="form-control" type="text" value="" id="countdownInput">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="countdownOutput" class="col-2 col-form-label">Output</label>
+          <div class="col-10">
+            <input class="form-control disabled" type="text" id="countdownOutput" disabled> remaining
+            <span style="color: red;" class="countdownCallback"></span>
+          </div>
+        </div>
+      </form>
+    </div>
+
   </div>
 
-  <div class="col-md-6">
-    <h1 class="display-3">Count Down</h1>
-    <form>
-      <div class="form-group row">
-        <label for="countdownInput" class="col-2 col-form-label">Input</label>
-        <div class="col-10">
-          <input class="form-control" type="text" value="" id="countdownInput">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label for="countdownOutput" class="col-2 col-form-label">Output</label>
-        <div class="col-10">
-          <input class="form-control disabled" type="text" id="countdownOutput" disabled> remaining <span style="color: red;" class="countdownCallback"></span>
-        </div>
-      </div>
-    </form>
-  </div>
-
-</div>
-
-<script src="../dist/javascript-character-count.min.js"></script>
-<script>
-  characterCount(document.getElementById('countupInput'), {
-    max: 3,
-    output: document.getElementById('countupOutput')
-  }, function () {
-    document.querySelector('.countupCallback').textContent = 'Callback: Max Characters entered!'
-  });
+  <script src="../dist/javascript-character-count.min.js"></script>
+  <script>
+    characterCount(document.getElementById('countupInput'), {
+      max: 3,
+      output: document.getElementById('countupOutput')
+    }, function () {
+      document.querySelector('.countupCallback').textContent = 'Callback: Max Characters entered!'
+    });
 
     characterCount(document.getElementById('countdownInput'), {
-    max: 3,
-    output: document.getElementById('countdownOutput')
-  }, function () {
-    document.querySelector('.countdownCallback').textContent = 'Callback: Max Characters entered!'
-  }, true);
-</script>
+      max: 3,
+      output: document.getElementById('countdownOutput'),
+      invert: true,
+    }, function () {
+      document.querySelector('.countdownCallback').textContent = 'Callback: Max Characters entered!'
+    });
+  </script>
 </body>
 
 </html>
