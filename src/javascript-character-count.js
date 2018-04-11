@@ -1,20 +1,24 @@
 module.exports = function (el, options, callback = null) {
 
   function sync() {
-    return options.output.value = options.invert === true ?  options.max - el.value.length : el.value.length;
+    return options.output.value = options.invert === true ? options.max - el.value.length : el.value.length;
   }
 
-  sync();
+  if (typeof (el) != 'undefined' && el !== null) {
 
-  el.addEventListener('input', () => {
-    if (options.invert === true) {
-      if (sync() < 0 && callback !== null) {
-        callback();
+    sync();
+
+    el.addEventListener('input', () => {
+      if (options.invert === true) {
+        if (sync() < 0 && callback !== null) {
+          callback();
+        }
+      } else {
+        if (sync() > options.max && callback !== null) {
+          callback();
+        }
       }
-    } else {
-      if (sync() > options.max && callback !== null) {
-        callback();
-      }
-    }
-  });
+    });
+
+  }
 };
